@@ -1,0 +1,25 @@
+myVariable = 0
+
+def when_started1():
+    global myVariable
+    drivetrain.set_drive_velocity(80, PERCENT)
+    drivetrain.set_turn_velocity(60, PERCENT)
+    Chains.set_velocity(100, PERCENT)
+    Chains.set_max_torque(100, PERCENT)
+    LoadingArm.set_velocity(100, PERCENT)
+    LoadingArm.set_max_torque(100, PERCENT)
+    drivetrain.drive_for(FORWARD, 12, INCHES)
+    LoadingArm.spin_for(FORWARD, 90, DEGREES)
+    wait(1, SECONDS)
+    LoadingArm.spin_for(REVERSE, 90, DEGREES)
+    drivetrain.drive_for(REVERSE, 12, INCHES)
+    drivetrain.turn_for(RIGHT, 30, DEGREES)
+    drivetrain.drive_for(FORWARD, 12, INCHES)
+    LoadingArm.spin_for(FORWARD, 90, DEGREES)
+    wait(1, SECONDS)
+    LoadingArm.spin_for(REVERSE, 90, DEGREES)
+    drivetrain.drive_for(REVERSE, 12, INCHES)
+    drivetrain.turn_for(LEFT, 30, DEGREES)
+    drivetrain.drive_for(FORWARD, 6, INCHES)
+
+when_started1()
