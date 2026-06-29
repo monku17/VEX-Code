@@ -1,0 +1,24 @@
+myVariable = 0
+
+def when_started1():
+    global myVariable
+    Motor6Claws.spin_for(FORWARD, 90, DEGREES)
+    drivetrain.turn_for(RIGHT, 35, DEGREES)
+    drivetrain.drive_for(FORWARD, 7, INCHES)
+    Motor6Claws.spin_for(REVERSE, 90, DEGREES)
+    Motor6Claws.spin_for(FORWARD, 90, DEGREES)
+    LiftyThingy6and12.spin_for(REVERSE, 180, DEGREES)
+    drivetrain.turn_for(LEFT, 15, DEGREES)
+    drivetrain.drive_for(FORWARD, 10, INCHES)
+    LiftyThingy6and12.spin_for(FORWARD, 180, DEGREES)
+    Motor6Claws.spin_for(FORWARD, 90, DEGREES)
+    drivetrain.turn_for(RIGHT, 160, DEGREES)
+    drivetrain.drive_for(REVERSE, 15, INCHES)
+    LiftyThingy6and12.spin_for(FORWARD, 1000, DEGREES)
+    drivetrain.turn_for(LEFT, 180, DEGREES)
+    drivetrain.drive_for(REVERSE, 200, MM)
+    Motor11BeamPulley.spin_for(REVERSE, 200, DEGREES)
+    drivetrain.drive_for(REVERSE, 2, INCHES)
+    Motor11BeamPulley.spin_for(FORWARD, 50, DEGREES)
+
+when_started1()
