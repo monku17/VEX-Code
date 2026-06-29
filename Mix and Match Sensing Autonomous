@@ -1,0 +1,31 @@
+myVariable = 0
+Distance_Sensing = 0
+Optical_Sensor = False
+set_drive_heading_to = False
+Drive_thingy = False
+A1 = False
+
+def when_started1():
+    global myVariable, Distance_Sensing, Optical_Sensor, set_drive_heading_to, Drive_thingy, A1
+    OpticalSensor.gesture_disable()
+    drivetrain.set_drive_velocity(100, PERCENT)
+    drivetrain.set_turn_velocity(55, PERCENT)
+    Optical_Sensor = OpticalSensor.color() == Color.YELLOW
+    Distance_Sensing = DistanceSensor.object_distance(INCHES)
+    Distance_Sensing = DistanceSensor.object_velocity()
+    pulley4and5.spin(REVERSE)
+    pulley4and5.set_velocity(100, PERCENT)
+    Intake9.set_velocity(100, PERCENT)
+    drivetrain.drive_for(FORWARD, 18, INCHES)
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    drivetrain.drive_for(REVERSE, 28, INCHES)
+    pulley4and5.spin(FORWARD)
+    while True:
+        pulley4and5.spin(REVERSE)
+        drivetrain.drive_for(FORWARD, 28, INCHES)
+        Intake9.spin_for(REVERSE, 20, TURNS)
+        drivetrain.drive_for(REVERSE, 24, INCHES)
+        pulley4and5.spin(REVERSE)
+        wait(20, MSEC)
+
+when_started1()
