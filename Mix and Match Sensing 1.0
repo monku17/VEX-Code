@@ -1,0 +1,30 @@
+myVariable = 0
+IsRedDone = False
+IsBlueDone = False
+IsYellowDone = False
+
+def when_started1():
+    global myVariable, IsRedDone, IsBlueDone, IsYellowDone
+    Chains.set_velocity(100, PERCENT)
+    drivetrain.set_drive_velocity(100, PERCENT)
+    IsRedDone = False
+    IsBlueDone = False
+    IsYellowDone = False
+    drivetrain.drive(FORWARD)
+    drivetrain.stop()
+    if optical_3.color() == Color.RED:
+        for repeat_count in range(3):
+            Chains.spin(FORWARD)
+            drivetrain.turn_for(RIGHT, 90, DEGREES)
+            Chains.spin(FORWARD)
+            drivetrain.drive(FORWARD)
+            Chains.spin(FORWARD)
+            Chains.stop()
+            wait(20, MSEC)
+    drivetrain.drive(REVERSE)
+    LoadingArm.spin(FORWARD)
+    LoadingArm.stop()
+    drivetrain.drive(FORWARD)
+    drivetrain.stop()
+
+when_started1()
